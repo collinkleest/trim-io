@@ -6,6 +6,7 @@ const app = express();
 require('dotenv').config();
 
 const mongoUri = "mongodb+srv://" + process.env.MONGO_USR + ":" + process.env.MONGO_PASS + "@" + process.env.MONGO_URL + "/" + process.env.MONGO_DB + "?retryWrites=true&w=majority";
+const APP_PORT = process.env.PORT || 5000;
 
 mongoose.connect(
     mongoUri,
@@ -48,4 +49,4 @@ app.post("/create-url", async (req, res) => {
     res.send(`${req.protocol}://${req.get('host')}/${id}`);
 });
 
-app.listen(process.env.PORT || 5000,  () => {console.log("Trim.io API Started")});
+app.listen(APP_PORT, () => {console.log(`Trim.io API Started at port: ${APP_PORT}`)});

@@ -1,3 +1,4 @@
+// event listener for submit button
 document.getElementById("submit-btn").addEventListener('click', function(){
     let url = document.getElementById("url-input").value;
     if (isUrlValid(url)){
@@ -10,12 +11,15 @@ document.getElementById("submit-btn").addEventListener('click', function(){
         req.send(JSON.stringify({"url":url, "date": date}));
         req.onreadystatechange = function (){
             if (req.readyState == 4 && req.status == "200"){
-                document.getElementById("output").innerHTML = "OUTPUT: " + req.responseText;
+                document.getElementById("url-input").value = "";
+                document.getElementById("output-link").href = req.responseText;
+                document.getElementById("output-link").innerHTML = req.responseText;
             }
         }
     }
 });
 
+// client-side check if url is valid
 function isUrlValid(url){
     try {
         new URL(url);

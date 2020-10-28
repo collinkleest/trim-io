@@ -26,7 +26,6 @@ jobs:
           push: true
           tags: ckleest/trim-io:latest
           context: .
-          platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
           file: ./Dockerfile
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_AUTH_TOKEN }}

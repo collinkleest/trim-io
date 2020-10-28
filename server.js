@@ -36,6 +36,9 @@ function generateId(){
 app.get("/:id", async (req, res) => {
     if (req.params.id !== null || req.params.id !== undefined){
         let doc = await UrlEntity.findOne({uniqueId: req.params.id});
+        doc.redirectCount = doc.redirectCount  + 1;
+        await doc.save();
+        console.log(doc.redirectCount);
         res.redirect(doc.targetUrl);
     } else {
         res.redirect('/');
@@ -44,12 +47,16 @@ app.get("/:id", async (req, res) => {
 
 // create new url
 app.post("/create-url", async (req, res) => {
-    console.log("in post");
     let id = generateId();
     await UrlEntity.create({uniqueId: id,
     targetUrl: req.body.url,
-    dateCreated: req.body.date});
-    res.send(`${req.protocol}://${req.get('host')}/${id}`);
+    dateCreated: req.body.date,
+    redirectCount: 0});
+    res.send(JSON.stringify({
+        uniqueId: id,
+        shortenedUrl: `${req.protocol}://${req.get('host')}/${id}`,
+        dateCreated: req.body.date
+    }))
 });
 
 app.listen(APP_PORT, () => {console.log(`Trim.io API Started at port: ${APP_PORT}`)});

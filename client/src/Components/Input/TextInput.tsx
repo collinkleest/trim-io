@@ -53,7 +53,7 @@ export interface TextInputProps {
 
 export interface StateInterface {
   value: string;
-  responseUrl: string;
+  responseJSON: string;
   clicked: boolean;
 }
 
@@ -63,21 +63,22 @@ export class TextInput extends React.Component<TextInputProps, StateInterface> {
     super(props);
     this.state = {
       clicked: false,
-      responseUrl: "",
+      responseJSON: "",
       value: ""
     }
   }
 
   createTrigger() {
-    Axios.post('/create-url',
+    Axios.post('http://localhost:5000/create-url',
       {
         "url": this.state.value,
         "date": new Date().toLocaleString()
       }
     ).then((response) => {
+      console.log(response.data);
       this.setState({
         clicked: true,
-        responseUrl: response.data,
+        responseJSON: response.data,
         value: ''
       })
     }).catch((error) => {
@@ -105,7 +106,7 @@ export class TextInput extends React.Component<TextInputProps, StateInterface> {
           <StyledBtn onClick={() => this.createTrigger()}>
           Create
           </StyledBtn>
-        {this.state.clicked && <StyledLabel>{this.state.responseUrl}</StyledLabel>}
+        {this.state.clicked && <StyledLabel>{JSON.parse(this.state.responseJSON).get('shortenedUrl')}</StyledLabel>}
         </React.Fragment>
     );
   }

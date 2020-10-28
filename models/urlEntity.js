@@ -12,6 +12,10 @@ const urlEntitySchema = new mongoose.Schema({
     dateCreated: {
         type: String,
         required: true,
+    },
+    redirectCount: {
+        type: Number,
+        required: false,
     }
 });
 

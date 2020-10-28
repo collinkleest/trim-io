@@ -14,12 +14,12 @@ const StyledDiv = styled.div`
 `;
 
 const StyledHeader = styled.h1`
-  font-size: 48px;
+  font-size: 72px;
   margin: 0;
 `;
 
 const StyledSubHeading = styled.h4`
-  font-size: 20px;
+  font-size: 42px;
   margin: 2px 0 0 0;
   font-weight: 300;
 `;

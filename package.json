@@ -18,7 +18,10 @@
     "url": "https://github.com/collinkleest/trim-io/issues"
   },
   "homepage": "https://github.com/collinkleest/trim-io#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "style-loader": "^2.0.0"
+  },
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

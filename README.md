@@ -7,6 +7,7 @@ A simple URL shortener built with Mongo, Express and Node.
 [![Website shields.io](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Ftrimio.herokuapp.com)](https://trimio.herokuapp.com)
 [![Website shields.io](https://img.shields.io/github/v/release/collinkleest/trim-io?style=flat)](https://github.com/collinkleest/trim-io/releases)
 [![Website shields.io](https://img.shields.io/github/license/collinkleest/trim-io)](https://github.com/collinkleest/trim-io/blob/master/LICENSE)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/collinkleest/trim-io/main.yml)
 
 #
 
@@ -31,6 +32,25 @@ Now install all node dependencies.
 npm install
 ```
 
+Now install all dependencies in client folder.
+
+```bash
+cd client/
+npm install
+```
+
+Build the front-end.
+
+```bash
+npm run build
+```
+
+OPTIONALLY: develop front-end live
+
+```bash
+npm start
+```
+
 Now run the application with NPM run.
 
 ```bash
@@ -49,4 +69,12 @@ MONGO_USR= // username for mongodb
 MONGO_PASS= // password for mongodb
 MONGO_DB= // target mongo database
 MONGO_URL= // url to the mongo database, either cloud hosted or locally hosted
+```
+
+## Docker
+
+You can build a docker image of this service with the provided dockerfile.
+
+```bash
+docker build  .
 ```

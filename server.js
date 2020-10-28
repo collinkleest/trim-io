@@ -3,7 +3,10 @@ const UrlEntity = require("./models/urlEntity");
 const mongoose = require("mongoose");
 const urlEntity = require("./models/urlEntity");
 const app = express();
+const cors = require('cors');
 require('dotenv').config();
+
+app.use(cors());
 
 const mongoUri = "mongodb+srv://" + process.env.MONGO_USR + ":" + process.env.MONGO_PASS + "@" + process.env.MONGO_URL + "/" + process.env.MONGO_DB + "?retryWrites=true&w=majority";
 const APP_PORT = process.env.PORT || 5000;
@@ -14,7 +17,7 @@ mongoose.connect(
 );
 
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('client/dist'));
 
 async function checkIdExists(id){
     let exists = await UrlEntity.exists({uniqueId: id});

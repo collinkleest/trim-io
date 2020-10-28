@@ -4,10 +4,10 @@ A simple URL shortener built with Mongo, Express and Node.
 
 #
 
-[![Website shields.io](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Ftrimio.herokuapp.com)](https://trimio.herokuapp.com)
-[![Website shields.io](https://img.shields.io/github/v/release/collinkleest/trim-io?style=flat)](https://github.com/collinkleest/trim-io/releases)
-[![Website shields.io](https://img.shields.io/github/license/collinkleest/trim-io)](https://github.com/collinkleest/trim-io/blob/master/LICENSE)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/collinkleest/trim-io/main.yml)
+[![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Ftrimio.herokuapp.com)](https://trimio.herokuapp.com/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/collinkleest/trim-io)](https://github.com/collinkleest/trim-io/releases/latest)
+[![GitHub](https://img.shields.io/github/license/collinkleest/trim-io)](https://github.com/collinkleest/trim-io/blob/master/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/collinkleest/trim-io/ci)](https://github.com/collinkleest/trim-io/actions)
 
 #
 

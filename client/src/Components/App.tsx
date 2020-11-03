@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Header } from "./Header";
-import { TextInput, InputWrapper } from "./Input";
+import { TextInput, InputWrapper, Collapsable } from "./Input";
 
 export class App extends React.Component{
   render() {
@@ -12,10 +12,11 @@ export class App extends React.Component{
         />
         <InputWrapper>
           <TextInput
-            placeHolder="Enter your link address"
+            placeHolder="Enter link"
             id="txt-input"
           />
         </InputWrapper>
+        <Collapsable />
       </div>
     )
   }

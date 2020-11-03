@@ -1,4 +1,5 @@
 import { TextInput } from "./TextInput";
+import { Collapsable } from "./Collapsable";
 import styled from "styled-components";
 
 const InputWrapper = styled.div`
@@ -13,4 +14,4 @@ const InputWrapper = styled.div`
   }
 `;
 
-export {TextInput, InputWrapper};
+export {TextInput, InputWrapper, Collapsable};

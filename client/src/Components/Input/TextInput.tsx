@@ -5,12 +5,19 @@ import styled from "styled-components";
 const StyledInput = styled.input`
   width: 360px;
   background: #fff;
-  color: $input-text-color;
+  color: black;
   font: inherit;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
   border: 0;
   outline: 0;
-  padding: 22px 18px;
+  padding: 22px 40px 22px 18px;
+  margin-right: 28px;
+  @media (max-width: 480px){
+    width: 260px;
+  }
+  @media (max-width: 440px){
+    width: 200px;
+  }
 `
 
 const StyledBtn = styled.button`
@@ -30,7 +37,7 @@ const StyledBtn = styled.button`
   border-radius: 2px;
   padding: 12px 36px;
   
-  margin-left: -96px;
+  margin-left: -68px;
 
   &:hover {
     background-color: #7282E7;

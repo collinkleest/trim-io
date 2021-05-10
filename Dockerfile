@@ -4,7 +4,6 @@ COPY . /app
 
 WORKDIR /app
 
-
 RUN npm install
 
 WORKDIR /app/client
@@ -16,7 +15,5 @@ WORKDIR /app/client
 RUN npm run build
 
 WORKDIR /app
-
-EXPOSE 443
 
 CMD ["node", "server.js"]
